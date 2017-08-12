@@ -4,10 +4,10 @@ import {isUndefined, isString, isNumber, isFunction, isNull, isNative, isThunk, 
 import {setAttribute, removeAttribute} from "./attribute"
 /**
  * 更新node
- * @param node dom node,  parent node of vdom
- * @param pre  pre vnode
- * @param next next vnode
- * @param index child index in parent
+ * @param node -dom node,  parent node of vdom
+ * @param pre  -pre vnode
+ * @param next -next vnode
+ * @param index - child index in parent
  * @returns node
  */
 export function updateElement(node, pre, next, index=0){
