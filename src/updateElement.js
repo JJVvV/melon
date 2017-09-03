@@ -1,5 +1,4 @@
 import {createElement} from './createElement'
-
 import {isUndefined, isString, isNumber, isFunction, isNull, isNative, isThunk, isText, isSameThunk} from './common'
 import {setAttribute, removeAttribute} from "./attribute"
 /**
@@ -63,6 +62,7 @@ export function updateElement(node, pre, next, index=0){
  * @param index
  */
 function removeNode(node, pre, next, index){
+    removeThunk(pre)
     node.removeChild(node.childNodes[index])
 }
 
@@ -75,8 +75,25 @@ function removeNode(node, pre, next, index){
  */
 function replaceNode(node, pre, next, index){
     let newNode = createElement(next)
+    removeThunk(pre)
     node.replaceChild(newNode, node.childNodes[index])
     return newNode
+}
+
+/**
+ * thunk元素销毁时处理onRemove
+ * @param vnode
+ */
+function removeThunk(vnode){
+    while(isThunk(vnode)){
+        let {onRemove} = vnode.options
+        let {model} = vnode.state
+        if(onRemove) onRemove(model)
+        vnode = vnode.state.vnode
+    }
+    if(vnode.children){
+        vnode.children.forEach(removeThunk)
+    }
 }
 
 /**

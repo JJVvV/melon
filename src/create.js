@@ -6,11 +6,11 @@ export function create(type, attributes, ...children){
     children = Array.prototype.reduce.call(children || [], reduceChildren, [])
 
     if(typeof type === 'object'){
-        return createThunkElement(type.render, attributes, children)
+        return createThunkElement(type.render, attributes, children, type)
     }
 
     if(typeof type === 'function'){
-        return createThunkElement(type, attributes, children)
+        return createThunkElement(type, attributes, children, type)
     }
 
     return {
@@ -28,12 +28,13 @@ export function create(type, attributes, ...children){
  * @param children
  * @returns {{type: string, fn: *, attributes: *, children: *}}
  */
-function createThunkElement(fn, props, children){
+function createThunkElement(fn, props, children, options){
     return {
         type: 'thunk',
         fn,
         props,
-        children
+        children,
+        options
     }
 }
 

@@ -100,7 +100,7 @@ createElement方法会将vnode转换为真实的dom，但是目前这个方法�
 1. Element类型（native）
 2. Text类型（text）
 3. 自定义组件类型， 如MyButton（thunk）
-4. 空类型（empty）,这个类型可有可无，在react中会生成noscript。{undefined}就会生成一个空类型
+4. 空类型（empty）在react中会生成noscript。{undefined}就会生成一个空类型，空类型的作用在与站位，便于diff算法优化。
 
 所以我们来改写下createElement：
 

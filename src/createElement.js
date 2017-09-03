@@ -36,6 +36,7 @@ function createTextNode(text){
  */
 function createThunk(vnode){
     let {props, children} = vnode
+    let {onCreate} = vnode.options
     let model = {
         children,
         props
@@ -43,6 +44,7 @@ function createThunk(vnode){
 
     let output = vnode.fn(model)
     let DOMElement = createElement(output)
+    if(onCreate) onCreate(model)
     vnode.state = {
         vnode: output,
         model
