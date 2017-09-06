@@ -8,4 +8,4 @@ export const isNull = (value) => value === null
 export const isNative = isVType('native')
 export const isThunk = isVType('thunk')
 export const isText = isVType('text')
-export const isSameThunk = (pre, next) => pre.render === next.render
+export const isSameThunk = (pre, next) => pre.fn === next.fn

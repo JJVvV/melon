@@ -158,3 +158,7 @@ function updateThunk(node, pre, next, index){
     }
     return node
 }
+
+function replaceThunk(){
+    return updateThunk.apply(null, arguments)
+}
