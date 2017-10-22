@@ -6,6 +6,8 @@ Melon
 
 这个项目的目的是通过自己实现一个virtual-dom，有助于更好的理解React这类库的底层原理，不建议运用到实际项目当中。
 
+(详细讲解)[https://github.com/JJVvV/melon/blob/master/doc/doc.md]
+
 ## Installation
 
 ```
@@ -42,7 +44,7 @@ app()
 
 ## Thanks
 
-这里的大部分代码都是参考这里：
+参考文献：
 
 * [deku 一个短小的类似react的表现层实现](https://github.com/anthonyshort/deku)  
 * [decca](https://github.com/rstacruz/decca)    
