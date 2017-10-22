@@ -5,12 +5,6 @@
 
 
 
-文章中的代码大多参考了这里，如果转载请注明出处，强烈推荐看下第三个链接，文章写得比楼主要简洁清晰，自愧不如：
-
-* [deku 一个短小的类似react的表现层实现](https://github.com/anthonyshort/deku)
-* [decca](https://github.com/rstacruz/decca)
-* [how-to-write-your-own-virtual-dom](https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060)
-
 
 今天要实现的功能如下：
 
@@ -244,3 +238,10 @@ export function updateElement(node, pre, next, index=0){
     }
 }
 ```
+
+
+参考文献：
+
+* [deku 一个短小的类似react的表现层实现](https://github.com/anthonyshort/deku)
+* [decca](https://github.com/rstacruz/decca)
+* [how-to-write-your-own-virtual-dom](https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060)
