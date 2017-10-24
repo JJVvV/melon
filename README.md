@@ -4,7 +4,7 @@ Melon
 
 
 
-这个项目的目的是通过自己实现一个virtual-dom，有助于更好的理解React这类库的底层原理，不建议运用到实际项目当中。
+这个项目的目的是通过自己实现一个virtual-dom，有助于更好的理解React这类库的底层原理。
 
 [详细讲解](https://github.com/JJVvV/melon/blob/master/doc/doc.md)
 
